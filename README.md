@@ -57,6 +57,12 @@ Type: `Array` or `String`
 Default: []
 
 An array or string specifying npm flags passed to the [npm install](https://docs.npmjs.com/cli/install) cmd.
+### `npm.cmd`
+
+Type: `String`
+Default: ' '
+
+A string specifying the command to be run by the [npm:cmd](https://github.com/callerc1/shipit-npm#workflow-tasks) (e.g. `'run build'`) **overridden if the `--cmd` argument is set on the command line**.
 
 ### `npm.triggerEvent`
 

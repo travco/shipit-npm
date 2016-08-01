@@ -26,12 +26,19 @@ module.exports = function (gruntOrShipit) {
         );
       }
 
+      if (!argv.cmd && shipit.config.npm) {
+        argv.cmd = shipit.config.npm.cmd;
+      }
+
       if(!argv.cmd) {
         throw new Error(
           shipit.log(
             chalk.red('Please specify a npm command eg'),
-            chalk.gray('shipit staging npm:init npm:cmd'),
-            chalk.white('--cmd "update"')
+            chalk.gray('\nshipit staging npm:init npm:cmd'),
+            chalk.white('--cmd "update"'),
+            chalk.red('\nor'),
+            chalk.gray('\n(in your shipitfile)'),
+            chalk.white('npm: { cmd: \'run build\' }')
           )
         );
       }
